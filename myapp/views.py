@@ -24,19 +24,6 @@ class RegisterView(CreateView):
         messages.success(self.request, f"Account created successfully")
         return super().form_valid(form)
 
-# def register(request):
-#     if request.method == "POST":
-#         fm = RegisterForm(request.POST)
-#         if fm.is_valid():
-#             fm.save()
-#             messages.success(request,'Account Created Succesfully.!')
-#             fm = RegisterForm()
-    # else:
-    #     fm = RegisterForm()
-    # return render(request,'myapp/registration.html',{'form':fm})
-
-
-
 class LoginView(View):
     def get(self,request):
         return render(request,'myapp/userlogin.html',{'form':AuthenticationForm})
@@ -52,36 +39,11 @@ class LoginView(View):
                 return redirect('/')
         return render(request,'myapp/userlogin.html',{'form':form})
 
-
-# def user_login(request):
-#     if not request.user.is_authenticated:
-#         if request.method == "POST":
-#             fm = AuthenticationForm(request=request,data=request.POST)
-#             if fm.is_valid():
-#                 uname = fm.cleaned_data['username']
-#                 upass = fm.cleaned_data['password']
-#                 user = authenticate(username=uname,password=upass)
-
-#                 if user is not None:
-#                     login(request,user)
-#                     return HttpResponseRedirect('/')
-
-#         else:
-#             fm = AuthenticationForm()
-#         return render(request,'myapp/userlogin.html',{'form':fm})
-#     else:
-#         return HttpResponseRedirect('/dashboard/')
-
-
 def user_dashboard(request):
     if request.user.is_authenticated:
         return render(request,'myapp/user_dashboard.html')
     else:
         return HttpResponseRedirect('/login/')
-
-# def user_logout(request):
-#     logout(request)
-#     return HttpResponseRedirect('/login/')
 
 @login_required(login_url='login')
 def create_post(request):
