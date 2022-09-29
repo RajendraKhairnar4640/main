@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}dashboard{% endblock title %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="col-sm-4 mt-5">
+        <h4>Welcome to your dashboard {{user.username}}..!</h4>
+        
+    </div>
+{% endblock content %}
