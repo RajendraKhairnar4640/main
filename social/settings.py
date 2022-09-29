@@ -13,7 +13,7 @@ SECRET_KEY = '%gf&fl($r+1arqg89)+-=#6r%dxd51up0p1%(_xl9hm!7s94%q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['twgram.herokuapp.com','localhost']
 
 
 # Application definition
