@@ -1,5 +1,9 @@
 from django.contrib import admin
 from .models import Post,Comments,Like
+from django.contrib.auth.models import User
+
+
+
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):

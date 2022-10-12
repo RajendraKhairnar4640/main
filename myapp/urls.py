@@ -4,6 +4,7 @@ from .views import PostListView,UserPostListView,RegisterView,LoginView
 from django.contrib.auth.views import LogoutView
 
 
+
 urlpatterns = [
     path('', PostListView.as_view(), name='home'),
     #path('register/',views.register,name='register'),

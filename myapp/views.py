@@ -14,6 +14,7 @@ import json
 from django.urls import reverse_lazy
 from django.views import View
 
+
 class RegisterView(CreateView):
     form_class = RegisterForm
     success_url = reverse_lazy('register')
